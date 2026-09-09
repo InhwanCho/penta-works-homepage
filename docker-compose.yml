@@ -1,0 +1,16 @@
+services:
+  homepage:
+    build: .
+    restart: unless-stopped
+    init: true
+    ports:
+      - "127.0.0.1:${HOMEPAGE_PORT:-3200}:3000"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:3000/api/health"]
+      interval: 15s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+    security_opt:
+      - no-new-privileges:true
+
