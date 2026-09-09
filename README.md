@@ -23,7 +23,14 @@ pnpm build
 - Container: `127.0.0.1:3200`에만 바인딩
 - Public origin: Nginx가 `pentaworks.net`의 HTTPS 요청을 `3200`으로 프록시
 - Health check: `/api/health`
-- CI: GitHub `main` push → Jenkins → `deploy/deploy.sh`
+- CI: Jenkins checks for branch changes every two minutes (GitHub webhook trigger is also enabled).
+
+| Jenkins job | Branch | Pipeline | Address |
+| --- | --- | --- | --- |
+| `homepage-dev` | `dev` | `Jenkinsfile` | `http://192.168.0.210:3201` (LAN) |
+| `homepage-prod` | `main` | `Jenkinsfile.prod` | `https://pentaworks.net` |
+
+Both jobs are registered in Jenkins. Each uses a separate checkout and Compose project. The development container binds to the server LAN IP on port 3201; production binds to loopback on port 3200. Run `bash deploy/deploy.sh dev` or `bash deploy/deploy.sh prod` on the server for a manual deployment.
 
 첫 배포 후 서버에서 Nginx 원본 설정을 한 번 적용합니다.
 
