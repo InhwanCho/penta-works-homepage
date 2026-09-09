@@ -28,7 +28,10 @@ pnpm build
 첫 배포 후 서버에서 Nginx 원본 설정을 한 번 적용합니다.
 
 ```bash
+sudo bash /home/inhwan/apps/penta-works-homepage/deploy/setup-firewall.sh
 sudo bash /home/inhwan/apps/penta-works-homepage/deploy/setup-origin.sh
 ```
 
-Cloudflare에서는 `pentaworks.net`과 `www.pentaworks.net`을 동일한 원본으로 프록시하고 SSL/TLS 모드를 `Full (strict)`로 유지합니다.
+`setup-firewall.sh`는 기존 UFW 허용 규칙을 지우지 않고 SSH와 Nginx(80/443)를 보장한 뒤 기본 수신 정책을 차단으로 설정합니다. 홈페이지 컨테이너 포트 `3200`은 loopback에만 바인딩되어 외부에 노출되지 않습니다.
+
+Cloudflare에서는 `pentaworks.net` A 레코드와 `www.pentaworks.net` CNAME을 프록시하고, SSL/TLS 모드를 `Full (strict)`, 최소 TLS를 1.2 이상, `Always Use HTTPS`를 활성 상태로 유지합니다. 원본 설정 스크립트는 기존 Cloudflare DNS 인증으로 `pentaworks.net`과 `www.pentaworks.net` 인증서를 함께 갱신합니다.
