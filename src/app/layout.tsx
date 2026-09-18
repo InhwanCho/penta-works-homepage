@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   description:
     "의료 현장의 장비 데이터를 연결하고 운영 상태를 한눈에 보여주는 PENTA WORKS 모니터링 솔루션입니다.",
   applicationName: "PENTA WORKS",
+  robots: { index: false, follow: false },
   alternates: { canonical: "/" },
   icons: {
     icon: [
