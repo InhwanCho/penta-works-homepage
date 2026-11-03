@@ -8,28 +8,10 @@ const services = [
   ["03", "냉각 계통 · 주변 장치", "그라디언트 칠러를 비롯한 냉각 계통의 온도, 누수와 동작 상태를 확인합니다. 장비 본체와 주변 장치를 함께 살피며 유지보수에 필요한 조치를 이어갑니다.", "칠러 · 냉각 계통 · 동작 확인"],
 ];
 function Brand() {
-  return <a className="brand corporate-brand" href="#top" aria-label="PENTAWORKS 홈"><Image src="/images/logo.png" alt="PENTA WORKS" width={225} height={53} priority /></a>;
+  return <a className="brand corporate-brand" href="#top" aria-label="PENTAWORKS 홈"><Image src="/favicon/android-chrome-512x512.png" alt="" width={40} height={40} priority /><span className="penta-wordmark">PENTA WORKS</span></a>;
 }
 function EquipmentGraphic() {
-  return <div className="equipment-visual">
-    <div className="equipment-caption"><span>FIELD SERVICE</span><strong>GE MRI 유지보수</strong></div>
-    <svg viewBox="0 0 520 360" role="img" aria-label="MRI 장비와 정비를 표현한 개념 일러스트">
-      <defs><linearGradient id="scanner" x2="1" y2="1"><stop stopColor="#fff"/><stop offset="1" stopColor="#d9e7ee"/></linearGradient></defs>
-      <ellipse cx="270" cy="310" rx="209" ry="25" fill="#c8dce5" opacity=".5"/>
-      <rect x="102" y="40" width="290" height="246" rx="76" fill="url(#scanner)" stroke="#9ebcc9" strokeWidth="2"/>
-      <circle cx="247" cy="161" r="85" fill="#9bbbc9"/><circle cx="247" cy="161" r="68" fill="#173d51"/>
-      <path d="M196 171a52 52 0 0 1 102 0" fill="none" stroke="#568294" strokeWidth="2"/>
-      <rect x="207" y="201" width="81" height="104" rx="13" fill="#c2d6e0" stroke="#9ebcc9"/>
-      <path d="m222 187-57 100q-6 14 10 15h149q17-1 10-15l-60-100Z" fill="#fff" stroke="#a5bfcc" strokeWidth="2"/>
-      <path d="m225 192-43 88h135l-48-88Z" fill="#6d97a8"/>
-      <rect x="326" y="119" width="28" height="43" rx="6" fill="#c2d8e3"/>
-      <circle cx="340" cy="132" r="4" fill="#298899"/>
-      <path d="M72 104H38v74h42M413 203h51v-72h-40" fill="none" stroke="#72a4b6" strokeWidth="1.5" strokeDasharray="4 5"/>
-      <circle cx="72" cy="104" r="5" fill="#268698"/><circle cx="413" cy="203" r="5" fill="#268698"/>
-    </svg>
-    <div className="equipment-tags"><span>정기점검</span><span>장애 대응</span><span>정비이력</span></div>
-    <p className="caption">장비 유지보수를 표현한 개념 이미지</p>
-  </div>;
+ return <figure className="equipment-visual equipment-photo"><div className="equipment-caption"><span>GE MRI</span><strong>SIGNA HDxt 3.0T</strong></div><Image src="/images/ge-signa-hdxt-3t.png" alt="GE SIGNA HDxt 3.0T MRI 장비" width={600} height={600} priority unoptimized/><figcaption><a href="https://www.amberusa.com/equipment/mri/3-0t/ge-signa-hdxt" target="_blank" rel="noreferrer">장비 이미지 · Amber Diagnostics</a></figcaption></figure>;
 }
 export default function Home() {
   return <>
@@ -46,6 +28,6 @@ export default function Home() {
       <section className="product-band" id="products"><div className="shell section split product-section"><Reveal><p className="eyebrow">A PRODUCT BY PENTAWORKS</p><div className="product-brand"><Image src="/images/mreyes-header.svg" alt="" width={42} height={42}/><span className="wordmark">MReyes</span></div><h2>현장 유지보수 경험을<br/>장비 관리 서비스로.</h2><p className="description">MReyes는 펜타웍스가 개발·운영하는 제품입니다. 병원 장비의 측정값과 알림, 업무기록과 일정을 한곳에서 확인하며 현장 관리 업무를 돕습니다.</p><ul><li>병원별 측정값과 상태 변화 모니터링</li><li>업무기록 · 정비이력 · 점검 일정 관리</li><li>PC와 모바일에서 이어지는 업무 확인</li></ul><div className="actions"><a className="button" href={app+"/about"}>MReyes 소개 보기 ↗</a><a className="secondary" href={app}>제품 접속</a></div></Reveal><Reveal from="right"><div className="hero-shot product-shot"><div className="shot-label">MReyes · 업무 현황<span>예시 화면</span></div><Image src="/images/service/overview.png" alt="펜타웍스 제품 MReyes의 업무 달력 예시" width={1200} height={820} unoptimized/></div></Reveal></div></section>
       <section id="contact" className="contact"><div className="shell"><Reveal><p className="eyebrow">CONTACT PENTAWORKS</p><h2>장비 유지보수가 필요할 때,<br/>펜타웍스와 상의하세요.</h2><p>GE MRI 유지보수와 MReyes 이용에 관해 문의하실 수 있습니다.<br/>장비 모델과 현재 증상, 필요한 지원 내용을 함께 보내주세요.</p><div className="actions"><a className="button" href="mailto:ihcho@pentaworks.net">이메일로 문의하기 ↗</a></div><a href="mailto:ihcho@pentaworks.net">ihcho@pentaworks.net</a></Reveal></div></section>
     </main>
-    <footer><div className="shell footer-top"><div><a className="corporate-footer-logo" href="#top"><Image src="/images/logo.png" alt="PENTA WORKS" width={190} height={45}/></a><p>GE MRI 유지보수 · 장비 관리 솔루션</p><span>주식회사 펜타웍스</span></div><div className="footer-links"><a href="#company">회사 소개</a><a href="#service">유지보수</a><a href={app+"/about"}>제품 · MReyes</a><a href="#contact">문의하기</a></div></div><div className="shell footer-bottom"><address>사업자등록번호 675-87-00483<br/>인천광역시 남동구 호구포로74번길 78 (고잔동)<br/><a href="mailto:ihcho@pentaworks.net">ihcho@pentaworks.net</a></address><span>© {new Date().getFullYear()} PENTAWORKS. All rights reserved.</span></div></footer>
+    <footer><div className="shell footer-top"><div><a className="corporate-footer-logo" href="#top"><Image src="/favicon/android-chrome-512x512.png" alt="" width={36} height={36}/><span className="penta-wordmark">PENTA WORKS</span></a><p>GE MRI 유지보수 · 장비 관리 솔루션</p><span>주식회사 펜타웍스</span></div><div className="footer-links"><a href="#company">회사 소개</a><a href="#service">유지보수</a><a href={app+"/about"}>제품 · MReyes</a><a href="#contact">문의하기</a></div></div><div className="shell footer-bottom"><address>사업자등록번호 675-87-00483<br/>인천광역시 남동구 호구포로74번길 78 (고잔동)<br/><a href="mailto:ihcho@pentaworks.net">ihcho@pentaworks.net</a></address><span>© {new Date().getFullYear()} PENTAWORKS. All rights reserved.</span></div></footer>
   </>;
 }
