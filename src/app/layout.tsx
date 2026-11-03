@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://pentaworks.net"),
   title: {
-    default: "MReyes | 펜타웍스 장비 모니터링 · 현장 업무",
+    default: "PENTAWORKS | GE MRI 유지보수 · 장비 관리 솔루션",
     template: "%s | PENTA WORKS",
   },
   description:
-    "병원 장비의 측정값부터 업무기록, 일정과 정비이력까지. 펜타웍스의 MReyes로 현장 업무를 연결하세요.",
+    "주식회사 펜타웍스는 GE MRI 유지보수를 중심으로 정기점검과 장애 대응을 수행하며, 자체 장비 관리 제품 MReyes를 개발·운영합니다.",
   applicationName: "PENTA WORKS",
   robots: { index: false, follow: false },
   alternates: { canonical: "/" },
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     url: "/",
     siteName: "PENTA WORKS",
-    title: "MReyes | 펜타웍스 장비 모니터링 · 현장 업무",
-    description: "장비 데이터와 운영 현장을 더 가깝게 연결합니다.",
+    title: "PENTAWORKS | GE MRI 유지보수 · 장비 관리 솔루션",
+    description: "GE MRI 유지보수와 정기점검, 펜타웍스의 장비 관리 제품 MReyes를 소개합니다.",
     images: [
       {
         url: "/favicon/android-chrome-512x512.png",
