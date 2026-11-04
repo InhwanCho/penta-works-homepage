@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SiteHeader, SiteFooter } from "./site-shell";
 import localFont from "next/font/local";
 const brand = localFont({src:"./fonts/Nunito-Bold.ttf",variable:"--font-brand",weight:"700",display:"swap"});
 
@@ -53,13 +54,13 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#f4f6fb",
+  themeColor: "#f8f7f3",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ko">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${brand.variable}`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${brand.variable}`}><SiteHeader/>{children}<SiteFooter/></body>
     </html>
   );
 }
